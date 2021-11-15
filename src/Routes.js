@@ -6,9 +6,10 @@ import Shop from './pages/Shop/Shop';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
-function App() {
+function Router() {
   return (
-    <div>
+    <>
+      <Nav />
       <BrowserRouter>
         <Routes>
           <Route path="/main" element={<Main />} />
@@ -16,7 +17,8 @@ function App() {
           <Route path="/shop" element={<Shop />} />
         </Routes>
       </BrowserRouter>
-    </div>
+      <Footer />
+    </>
   );
 }
-export default App;
+export default Router;
