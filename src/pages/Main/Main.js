@@ -1,5 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 
 export default function Main() {
-  return <div>Main</div>;
+  return <Container>Main</Container>;
 }
+
+const Container = styled.div`
+  color: ${props => props.theme.expressColor};
+`;

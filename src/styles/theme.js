@@ -12,6 +12,7 @@ const theme = {
   fontColor: '#2D2B2B',
   fontTitle: "'Alata', sans-serif;",
   fontContent: "'Noto Sans KR', sans-serif;",
+  expressColor: '#31B46E',
 };
 
 export default theme;
