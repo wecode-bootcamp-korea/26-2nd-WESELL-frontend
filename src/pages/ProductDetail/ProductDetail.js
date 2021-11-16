@@ -4,21 +4,22 @@ import Bargain from './Bargain';
 import ProductInfo from './ProductInfo';
 import MarketPrice from './MarketPrice';
 import { API } from '../../config';
+import { useParams } from 'react-router';
 
 export default function ProductDetail() {
   const [imageUrl, setImageUrl] = useState('');
-
+  const { productID } = useParams();
   // useEffect(() => {
   //   fetch(`/data/detailPageData.json`)
   //     .then(res => res.json())
   //     .then(data => setImageUrl(data.result.product_image));
   // }, []);
   useEffect(() => {
-    fetch(`${API.baseUrl}/products/1`)
+    fetch(`${API.baseUrl}/products/${productID}`)
       .then(res => res.json())
       .then(data => setImageUrl(data.result.product_image));
   }, []);
-  // console.log(imageUrl[0].url);
+  console.log(productID);
   return (
     <Container>
       <Wrapper>

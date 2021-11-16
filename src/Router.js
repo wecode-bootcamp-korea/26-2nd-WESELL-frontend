@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Shop from './pages/Shop/Shop';
@@ -18,7 +18,7 @@ function Router() {
         <Route path="/" element={<Main />} />
         <Route path="/main" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/detail" element={<ProductDetail />} />
+        <Route path="/detail/:productID" element={<ProductDetail />} />
         <Route path="/products" element={<Shop />} />
         <Route path="/style" element={<StyleTrend />} />
         <Route path="/buy" element={<Order type="buy" />} />

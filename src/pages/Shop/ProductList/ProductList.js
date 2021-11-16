@@ -5,6 +5,7 @@ import ProductCard from '../../../components/ProductCard/ProductCard';
 import { GiElectric } from 'react-icons/gi';
 import { RiArrowUpDownLine } from 'react-icons/ri';
 import SortingBox from './SortingBox/SortingBox';
+import { API } from '../../../config';
 
 export default function ProductList() {
   const [productCardinfo, setproductCardinfo] = useState([]);
@@ -46,8 +47,9 @@ export default function ProductList() {
     setReverseDirectPrice(!isReverseDirectPrice);
     isReverseDirectPrice ? navigate('?sort=price') : navigate('');
   };
+
   useEffect(() => {
-    fetch(`http://10.58.3.37:8000/products${location.search}`)
+    fetch(`${API.baseUrl}/products${location.search}`)
       .then(res => res.json())
       .then(data => {
         setproductCardinfo(data.products.productslist);
