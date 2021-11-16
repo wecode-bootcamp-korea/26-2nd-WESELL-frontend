@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import LeftContainer from './LeftSide/LeftCategoryContainer';
-import ProductListContianer from './RightSide/RightContianer';
+import FilterOptionContainer from './FliterAside/FilterOptionContainer';
+import ProductList from './ProductList/ProductList';
 import TopsideContainer from './Topside/TopsideContainer';
 
 export default function Shop() {
-  // window.addEventListener('scroll', () => console.log('🌀'));
   const [brandButton, setBrandButton] = useState([]);
 
   useEffect(() => {
@@ -30,8 +29,8 @@ export default function Shop() {
         </ShoeBrandBtn>
         <SlideBox />
         <SideContainer>
-          <LeftContainer />
-          <ProductListContianer />
+          <FilterOptionContainer />
+          <ProductList />
         </SideContainer>
       </ShopWrapper>
     </WholeShop>

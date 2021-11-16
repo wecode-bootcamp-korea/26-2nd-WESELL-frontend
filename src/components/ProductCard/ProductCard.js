@@ -1,17 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
+import { GiElectric } from 'react-icons/gi';
 
-function ProductCard({ img, brand, engname, krname, price }) {
+function ProductCard({ cardlist }) {
+  const { image_url, brand, en_name, ko_name, buy_now_price, fast_shipping } =
+    cardlist;
+
   return (
     <ProductContainer>
-      <ProductImg src={img} alt="productImage" />
+      <ProductImg src={image_url.url} alt="productImage" />
       <ProductBrand>{brand}</ProductBrand>
       <NameWrapper>
-        <ProductEngName>{engname}</ProductEngName>
-        <ProductKrName>{krname}</ProductKrName>
+        <ProductEngName>{en_name}</ProductEngName>
+        <ProductKrName>{ko_name}</ProductKrName>
       </NameWrapper>
-      <Productprice>{price}</Productprice>
+      <Productprice>{buy_now_price}</Productprice>
       <DirectPurChase>즉시 구매가</DirectPurChase>
+      {fast_shipping && (
+        <QuickDeliver>
+          <GiElectric />
+          빠른 배송
+        </QuickDeliver>
+      )}
     </ProductContainer>
   );
 }
@@ -19,6 +29,7 @@ function ProductCard({ img, brand, engname, krname, price }) {
 export default ProductCard;
 
 const ProductContainer = styled.div`
+  /* width: 200px; */
   padding: 5px 5px;
 `;
 
@@ -47,4 +58,15 @@ const Productprice = styled.div`
 const DirectPurChase = styled.div`
   color: lightgray;
   font-size: 12px;
+`;
+
+const QuickDeliver = styled.div`
+  display: flex;
+  /* width: 65px; */
+  padding: 5px 1px;
+  margin: 10px 0 10px 0;
+  border: 1px solid green;
+  border-radius: 5px;
+  font-size: 12px;
+  color: green;
 `;

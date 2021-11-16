@@ -21,9 +21,7 @@ function Router() {
           {/* <Route path="/users/signin" element={<Redirect />} /> */}
           <Route path="/main" element={<Main />} />
           <Route path="/detail" element={<ProductDetail />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/order" element={<Order />} />
-          {/* <Route path="/modal" element={<Modal />} /> */}
+          <Route path="/products" element={<Shop />} />
         </Routes>
       </BrowserRouter>
       <Footer />

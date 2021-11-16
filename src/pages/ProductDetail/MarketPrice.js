@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaRegArrowAltCircleDown } from 'react-icons/fa';
-import { Line } from 'react-chartjs-2';
+// import { Line } from 'react-chartjs-2';
 
 // https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/Line.js
 const data = {
@@ -41,7 +41,7 @@ export default function MarketPrice() {
         </ShowAllSizes>
       </TitleWrapper>
       <SalesGraphWrapper>
-        <Line data={data} options={options} />
+        {/* <Line data={data} options={options} /> */}
       </SalesGraphWrapper>
       <ButtonsWrapper>
         <Button color={color} onClick={() => onClick(1)}>
