@@ -1,27 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import ColumnTop from './ColumnTop';
+import Bargain from './Bargain';
 import ProductInfo from './ProductInfo';
 import MarketPrice from './MarketPrice';
+import { API } from '../../config';
 
 export default function ProductDetail() {
+  const [imageUrl, setImageUrl] = useState('');
+
+  // useEffect(() => {
+  //   fetch(`/data/detailPageData.json`)
+  //     .then(res => res.json())
+  //     .then(data => setImageUrl(data.result.product_image));
+  // }, []);
+  useEffect(() => {
+    fetch(`${API.baseUrl}/products/1`)
+      .then(res => res.json())
+      .then(data => setImageUrl(data.result.product_image));
+  }, []);
+  // console.log(imageUrl[0].url);
   return (
-    <Wrapper>
-      <ImageSection>
-        <ProductImg src="https://images.unsplash.com/photo-1494496195158-c3becb4f2475?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNob2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
-      </ImageSection>
-      <ProductInfoSection>
-        <ColumnTop />
-        <ProductInfo />
-        <MarketPrice />
-      </ProductInfoSection>
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <ImageSection>
+          <ProductImg alt="productImage" src={imageUrl && imageUrl[0].url} />
+        </ImageSection>
+        <ProductInfoSection>
+          <Bargain />
+          <ProductInfo />
+          <MarketPrice />
+        </ProductInfoSection>
+      </Wrapper>
+    </Container>
   );
 }
+const Container = styled.div`
+  margin: 0 auto;
+  padding-top: 140px;
+  max-width: 1280px;
+  padding: 170px 40px 120px;
+`;
 
 const Wrapper = styled.div`
   display: flex;
-  margin: 0px 294px 0px 294px;
 `;
 
 const ImageSection = styled.div`
@@ -29,11 +50,14 @@ const ImageSection = styled.div`
 `;
 
 const ProductImg = styled.img`
-  width: 400px;
-  height: 400px;
+  width: 580px;
+  height: 580px;
+  object-fit: cover;
 `;
 
 const ProductInfoSection = styled.div`
   border-left: 1px solid #ebebeb;
-  padding-left: 40px;
+  position: relative;
+  float: right;
+  width: 600px;
 `;
