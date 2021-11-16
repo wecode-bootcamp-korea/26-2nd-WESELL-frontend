@@ -1,0 +1,658 @@
+{
+  "result": {
+    "lowest_price_by_size": [
+      {
+        "id": 1,
+        "lowest_price": 351000,
+        "size": "230"
+      },
+      {
+        "id": 2,
+        "lowest_price": 400000,
+        "size": "240"
+      },
+      {
+        "id": 3,
+        "lowest_price": 432000,
+        "size": "250"
+      },
+      {
+        "id": 4,
+        "lowest_price": 464000,
+        "size": "260"
+      },
+      {
+        "id": 5,
+        "lowest_price": 531000,
+        "size": "270"
+      }
+    ],
+    "market_price": [
+      {
+        "id": 1,
+        "date": "2021-11-01",
+        "sizes": [
+          {
+            "avg_price": 359500.0,
+            "size": "230"
+          },
+          {
+            "avg_price": 431000.0,
+            "size": "240"
+          },
+          {
+            "avg_price": 438500.0,
+            "size": "250"
+          },
+          {
+            "avg_price": 425500.0,
+            "size": "260"
+          },
+          {
+            "avg_price": 530500.0,
+            "size": "270"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "date": "2021-11-02",
+        "sizes": [
+          {
+            "avg_price": 377000.0,
+            "size": "230"
+          },
+          {
+            "avg_price": 380500.0,
+            "size": "240"
+          },
+          {
+            "avg_price": 461000.0,
+            "size": "250"
+          },
+          {
+            "avg_price": 494000.0,
+            "size": "260"
+          },
+          {
+            "avg_price": 523000.0,
+            "size": "270"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "date": "2021-11-03",
+        "sizes": [
+          {
+            "avg_price": 397000.0,
+            "size": "230"
+          },
+          {
+            "avg_price": 437000.0,
+            "size": "240"
+          },
+          {
+            "avg_price": 437500.0,
+            "size": "250"
+          },
+          {
+            "avg_price": 447000.0,
+            "size": "260"
+          },
+          {
+            "avg_price": 542000.0,
+            "size": "270"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "date": "2021-11-04",
+        "sizes": [
+          {
+            "avg_price": 335000.0,
+            "size": "230"
+          },
+          {
+            "avg_price": 404500.0,
+            "size": "240"
+          },
+          {
+            "avg_price": 412500.0,
+            "size": "250"
+          },
+          {
+            "avg_price": 447000.0,
+            "size": "260"
+          },
+          {
+            "avg_price": 488500.0,
+            "size": "270"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "date": "2021-11-05",
+        "sizes": [
+          {
+            "avg_price": 360000.0,
+            "size": "230"
+          },
+          {
+            "avg_price": 417500.0,
+            "size": "240"
+          },
+          {
+            "avg_price": 470000.0,
+            "size": "250"
+          },
+          {
+            "avg_price": 447000.0,
+            "size": "260"
+          },
+          {
+            "avg_price": 513500.0,
+            "size": "270"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "date": "2021-11-06",
+        "sizes": [
+          {
+            "avg_price": 318500.0,
+            "size": "230"
+          },
+          {
+            "avg_price": 418000.0,
+            "size": "240"
+          },
+          {
+            "avg_price": 405500.0,
+            "size": "250"
+          },
+          {
+            "avg_price": 439000.0,
+            "size": "260"
+          },
+          {
+            "avg_price": 549500.0,
+            "size": "270"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "date": "2021-11-07",
+        "sizes": [
+          {
+            "avg_price": 357500.0,
+            "size": "230"
+          },
+          {
+            "avg_price": 408500.0,
+            "size": "240"
+          },
+          {
+            "avg_price": 454000.0,
+            "size": "250"
+          },
+          {
+            "avg_price": 429000.0,
+            "size": "260"
+          },
+          {
+            "avg_price": 539500.0,
+            "size": "270"
+          }
+        ]
+      }
+    ],
+    "product_image": [
+      {
+        "id": 1,
+        "url": "https://unsplash.com/photos/IQSdd7CcoJQ"
+      },
+      {
+        "id": 2,
+        "url": "https://github.com/Gyubs/django_setting_prcatice/blob/main/10_3.jpg?raw=true"
+      }
+    ],
+    "product_info": {
+      "brand": "Jordan",
+      "color": "BORDEAUX/WHITE-METALLIC SILVER",
+      "en_name": "Jordan 1 Retro High OG Bordeaux",
+      "fast_shipping": true,
+      "id": 1,
+      "ko_name": "조던 1 레트로 하이 OG 보르도",
+      "model_number": "555088-611",
+      "release_date": "2021-11-15",
+      "release_price": 199000
+    },
+    "order_history": [
+      {
+        "created_at": "2021-11-07",
+        "id": 13,
+        "price": 388000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 14,
+        "price": 327000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 27,
+        "price": 431000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 28,
+        "price": 386000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 41,
+        "price": 464000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 42,
+        "price": 444000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 55,
+        "price": 443000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 56,
+        "price": 415000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 69,
+        "price": 528000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-07",
+        "id": 70,
+        "price": 551000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 11,
+        "price": 319000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 12,
+        "price": 318000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 25,
+        "price": 407000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 26,
+        "price": 429000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 39,
+        "price": 430000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 40,
+        "price": 381000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 53,
+        "price": 432000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 54,
+        "price": 446000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 67,
+        "price": 546000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-06",
+        "id": 68,
+        "price": 553000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 9,
+        "price": 337000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 10,
+        "price": 383000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 23,
+        "price": 390000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 24,
+        "price": 445000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 37,
+        "price": 476000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 38,
+        "price": 464000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 51,
+        "price": 430000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 52,
+        "price": 464000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 65,
+        "price": 499000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-05",
+        "id": 66,
+        "price": 528000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 7,
+        "price": 334000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 8,
+        "price": 336000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 21,
+        "price": 389000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 22,
+        "price": 420000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 35,
+        "price": 429000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 36,
+        "price": 396000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 49,
+        "price": 483000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 50,
+        "price": 411000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 63,
+        "price": 497000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-04",
+        "id": 64,
+        "price": 480000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 5,
+        "price": 396000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 6,
+        "price": 398000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 19,
+        "price": 427000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 20,
+        "price": 447000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 33,
+        "price": 471000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 34,
+        "price": 404000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 47,
+        "price": 410000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 48,
+        "price": 484000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 61,
+        "price": 535000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-03",
+        "id": 62,
+        "price": 549000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 3,
+        "price": 388000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 4,
+        "price": 366000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 17,
+        "price": 371000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 18,
+        "price": 390000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 31,
+        "price": 443000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 32,
+        "price": 479000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 45,
+        "price": 488000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 46,
+        "price": 500000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 59,
+        "price": 560000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-02",
+        "id": 60,
+        "price": 486000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 1,
+        "price": 378000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 2,
+        "price": 341000,
+        "size": "230"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 15,
+        "price": 440000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 16,
+        "price": 422000,
+        "size": "240"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 29,
+        "price": 471000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 30,
+        "price": 406000,
+        "size": "250"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 43,
+        "price": 440000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 44,
+        "price": 411000,
+        "size": "260"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 57,
+        "price": 558000,
+        "size": "270"
+      },
+      {
+        "created_at": "2021-11-01",
+        "id": 58,
+        "price": 503000,
+        "size": "270"
+      }
+    ]
+  }
+}

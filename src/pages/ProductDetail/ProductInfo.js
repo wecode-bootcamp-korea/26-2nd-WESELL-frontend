@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { API } from '../../config';
 
 export default function ProductInfo() {
+  const [productInfoData, setProductInfoData] = useState({
+    model_number: '',
+    release_date: '',
+    color: '',
+    release_price: '',
+  });
+
+  // useEffect(() => {
+  //   fetch(`/data/detailPageData.json`)
+  //     .then(res => res.json())
+  //     .then(data => setProductInfoData(data.result.product_info));
+  // }, []);
+
+  useEffect(() => {
+    fetch(`${API.baseUrl}/products/4`)
+      .then(res => res.json())
+      .then(data => setProductInfoData(data.result.product_info));
+  }, []);
+
   return (
     <ProductInfoWrapper>
       <ProductInfoTitle>상품 정보</ProductInfoTitle>
@@ -9,27 +29,31 @@ export default function ProductInfo() {
         <AbsolutePosition>
           <ModelInfoBox>
             <ProductTitle>모델 번호</ProductTitle>
-            <ProductDetailInfo>555088-611</ProductDetailInfo>
+            <ProductDetailInfo>
+              {productInfoData.model_number}
+            </ProductDetailInfo>
           </ModelInfoBox>
         </AbsolutePosition>
         <VerticalLine>
           <ModelInfoBox>
             <ProductTitle>출시일</ProductTitle>
-            <ProductDetailInfo>21/11/15</ProductDetailInfo>
-          </ModelInfoBox>
-        </VerticalLine>
-        <VerticalLine>
-          <ModelInfoBox>
-            <ProductTitle>컬러</ProductTitle>
             <ProductDetailInfo>
-              BORDEAUX/WHITE-METALLIC SILVER
+              {productInfoData.release_date}
             </ProductDetailInfo>
           </ModelInfoBox>
         </VerticalLine>
         <VerticalLine>
           <ModelInfoBox>
+            <ProductTitle>컬러</ProductTitle>
+            <ProductDetailInfo>{productInfoData.color}</ProductDetailInfo>
+          </ModelInfoBox>
+        </VerticalLine>
+        <VerticalLine>
+          <ModelInfoBox>
             <ProductTitle>발매가</ProductTitle>
-            <ProductDetailInfo>199,000원</ProductDetailInfo>
+            <ProductDetailInfo>
+              {productInfoData.release_price}원
+            </ProductDetailInfo>
           </ModelInfoBox>
         </VerticalLine>
       </DetailProductWrapper>
@@ -44,8 +68,6 @@ const ProductInfoWrapper = styled.div`
 `;
 
 const ProductInfoTitle = styled.span`
-  /* margin-bottom: 10px; */
-  /* width: 500px; */
   font-weight: bold;
   color: #222;
 `;
@@ -62,8 +84,12 @@ const AbsolutePosition = styled.div`
 `;
 
 const ModelInfoBox = styled.div`
-  margin-top: 10px;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-right: 50px;
   padding: 0 10px;
 `;
 
@@ -71,11 +97,11 @@ const VerticalLine = styled.div`
   border-left: 1px solid #ebebeb;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: 50px;
+  height: 70px;
 `;
 
 const ProductTitle = styled.span`
-  display: inline-block;
+  margin-bottom: 5px;
   color: #222;
   opacity: 0.3;
   font-size: 12px;
@@ -83,8 +109,7 @@ const ProductTitle = styled.span`
 `;
 
 const ProductDetailInfo = styled.span`
-  display: inline-block;
-  font-size: 12px;
-
+  font-size: 14px;
+  /* font-weight: 600; */
   color: #222;
 `;
