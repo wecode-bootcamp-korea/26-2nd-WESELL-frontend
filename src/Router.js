@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Shop from './pages/Shop/Shop';
+import Order from './pages/Order/Order';
+import Modal from './pages/ProductDetail/components/Modal';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Login from './pages/LoginRegister/Login';
@@ -20,6 +22,8 @@ function Router() {
           <Route path="/main" element={<Main />} />
           <Route path="/detail" element={<ProductDetail />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/order" element={<Order />} />
+          {/* <Route path="/modal" element={<Modal />} /> */}
         </Routes>
       </BrowserRouter>
       <Footer />
