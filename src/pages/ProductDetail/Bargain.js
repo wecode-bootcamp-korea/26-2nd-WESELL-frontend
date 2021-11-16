@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaRegArrowAltCircleDown } from 'react-icons/fa';
 import { Modal } from './components/Modal';
@@ -11,15 +11,6 @@ export default function Bargain() {
   const [showModal, setShowModal] = useState(false);
   const [modalLocation, setModalLocation] = useState(true);
   const [detailPageData, setDetailPageData] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`/data/detailPageData.json`)
-  //     .then(res => res.json())
-  //     .then(data => setDetailPageData(data.result));
-  // }, []);
-
-  const match = useParams();
-  console.log(match);
 
   useEffect(() => {
     fetch(`${API.baseUrl}/products/1`)
@@ -39,7 +30,7 @@ export default function Bargain() {
     setProductSize(size);
     setProductPrice(price);
   };
-  console.log(detailPageData.lowest_price_by_size);
+
   return (
     <BargainWrapper>
       <BargainSection>
@@ -98,10 +89,7 @@ export default function Bargain() {
           <ButtonWrapper>
             <Button>
               <ButtonDivision>
-                {/* <OrderHorizontalLine /> */}
-                <ButtonTitleWrapper>
-                  <ButtonTitle to="/order">구매</ButtonTitle>
-                </ButtonTitleWrapper>
+                <ButtonTitle to="/order">구매</ButtonTitle>
                 <OrderContentWrapper>
                   <OrderPrice>235,000원</OrderPrice>
                   <OrderStatusName>즉시 구매가</OrderStatusName>
@@ -111,12 +99,9 @@ export default function Bargain() {
 
             <Button primary>
               <ButtonDivision>
-                {/* <SellHorizontalLine /> */}
-                <ButtonTitleWrapper>
-                  <ButtonTitle to="/order">판매</ButtonTitle>
-                </ButtonTitleWrapper>
+                <ButtonTitle to="/order">판매</ButtonTitle>
                 <OrderContentWrapper>
-                  <OrderPrice>11,500원</OrderPrice>
+                  <SellPrice>11,500원</SellPrice>
                   <SellStatusName>즉시 판매가</SellStatusName>
                 </OrderContentWrapper>
               </ButtonDivision>
@@ -170,7 +155,6 @@ const KrName = styled.span`
 
 const FigureWrap = styled.div`
   width: 100%;
-  /* height: 70px */
 `;
 
 const DetailSize = styled.div`
@@ -182,7 +166,6 @@ const DetailSize = styled.div`
 `;
 
 const SizeInKorean = styled.div`
-  /* padding-top: 4px; */
   margin-right: 10px;
   font-size: 13px;
   color: rgba(34, 34, 34, 0.8);
@@ -221,21 +204,11 @@ const TransactionPriceKorean = styled.span`
   color: rgba(34, 34, 34, 0.8);
 `;
 
-const PriceInfoWrapper = styled.div`
-  /* display: flex;
-  flex-direction: row; */
-`;
+const PriceInfoWrapper = styled.div``;
 
-const PriceInfo = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  margin-left: 330px; */
-`;
+const PriceInfo = styled.div``;
 
-const CurrentPrice = styled.div`
-  /* margin-left: 100px;
-  margin-top: 4px; */
-`;
+const CurrentPrice = styled.div``;
 
 const ChangedPriceWrapper = styled.div`
   display: flex;
@@ -251,7 +224,6 @@ const PricePunctuation = styled.span`
   font-weight: 700;
   flex-direction: row;
   margin-bottom: 7px;
-  /* margin-left: 35px; */
   justify-content: right;
   color: #222;
 `;
@@ -265,59 +237,47 @@ const ButtonWrapper = styled.div`
 
 const ButtonDivision = styled.div`
   display: flex;
-  /* width: 100%; */
 `;
 
 const Button = styled.button`
   background: ${props => (props.primary ? '#41B979' : '#EF6253')};
   width: 275px;
-  height: 60px;
   margin-right: ${props => (props.primary ? '0px' : '7px')};
-  /* padding: 0 10px; */
   border: none;
   border-radius: 10px;
   text-align: left;
   font-size: 17px;
 `;
 
-const ButtonTitleWrapper = styled.div`
-  padding: 10px 10px 10px 10px;
-`;
-
 const ButtonTitle = styled(Link)`
+  display: flex;
+  padding: 10px 10px 10px 10px;
+  border-right: 2px solid #2222221a;
   font-weight: 600;
   color: #fff;
   text-decoration: none;
+  align-items: center;
 `;
 
 const OrderContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* padding: 0px 10px 10px 10px; */
-  padding-left: 10px;
-  padding-top: 7px;
-  /* justify-content: flex-end; */
-  /* margin-left: 10px; */
-  /* justify-content: left; */
-  /* border-left: 1px solid silver; */
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
   color: #fff;
 `;
 
 const OrderPrice = styled.span`
-  /* margin-left: 10px;
-  font-size: 15px; */
-  /* align-items: left; */
+  display: flex;
 `;
+const SellPrice = styled.span``;
 const OrderStatusName = styled.span`
-  /* align-items: left; */
   font-size: 11px;
   opacity: 0.5;
-  /* flex: 1; */
 `;
 
 const SellStatusName = styled.span`
-  /* align-items: left; */
   font-size: 11px;
   opacity: 0.5;
-  /* flex: 1; */
 `;

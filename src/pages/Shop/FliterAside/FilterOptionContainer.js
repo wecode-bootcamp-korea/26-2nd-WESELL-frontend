@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router';
 import Option from './FliterOption/Option';
+import { API } from '../../../config';
 
 function FilterOptionContainer() {
   const [filterOptions, setFilterOptions] = useState([]);
@@ -19,7 +20,7 @@ function FilterOptionContainer() {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.3.37:8000${location.pathname + location.search}`)
+    fetch(`${API.baseUrl}${location.pathname + location.search}`)
       .then(res => res.json())
       .then(category => {
         setFilteredData(category.filterOptions);
