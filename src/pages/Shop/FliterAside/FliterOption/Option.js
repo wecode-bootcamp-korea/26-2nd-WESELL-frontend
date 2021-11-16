@@ -1,8 +1,14 @@
-import styled from 'styled-components';
 import React, { useState } from 'react';
-import SubCategoryList from './SubCategoryList';
+import styled from 'styled-components';
+import SubOption from './SubOption';
 
-function LeftCtgList({ mainCtg, subCtg, subdetailCtg }) {
+function Option({
+  mainCategory,
+  subCategory,
+  subdetailCategory,
+  brandId,
+  filterBrand,
+}) {
   const [isOpen, setisOpen] = useState(false);
 
   const detailOpen = () => {
@@ -10,16 +16,20 @@ function LeftCtgList({ mainCtg, subCtg, subdetailCtg }) {
   };
   return (
     <CategoryList>
-      <CategoryText>
-        {mainCtg}
+      <div>
+        <p>{mainCategory}</p>
         {isOpen ? (
           <InsideList>
-            <SubCategoryList subDetail={subdetailCtg} />
+            <SubOption
+              subDetail={subdetailCategory}
+              id={brandId}
+              filterBrand={filterBrand}
+            />
           </InsideList>
         ) : (
-          <Subcategory>{subCtg}</Subcategory>
+          <Subcategory>{subCategory}</Subcategory>
         )}
-      </CategoryText>
+      </div>
       <FilterButton onClick={detailOpen} isOpen={isOpen}>
         +
       </FilterButton>
@@ -27,12 +37,7 @@ function LeftCtgList({ mainCtg, subCtg, subdetailCtg }) {
   );
 }
 
-export default LeftCtgList;
-
-const CategoryText = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+export default Option;
 
 const FilterButton = styled.button`
   border: none;
@@ -41,7 +46,7 @@ const FilterButton = styled.button`
   cursor: pointer;
 `;
 
-const Subcategory = styled.span`
+const Subcategory = styled.p`
   margin-top: 10px;
   color: grey;
 `;

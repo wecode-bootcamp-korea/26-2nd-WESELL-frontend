@@ -7,7 +7,7 @@
         "brand": "NIke",
         "en_name": "Nike Dunk Low Retro Black",
         "ko_name": "나이키 덩크 로우 레트로 블랙",
-        "buy_now_price": "284,000원",
+        "buy_now_price": 284000,
         "fast_shipping": true
       },
       {
@@ -16,7 +16,7 @@
         "brand": "NIke",
         "en_name": "Nike Sakai",
         "ko_name": "나이키 사카이",
-        "buy_now_price": "400,000원",
+        "buy_now_price": 400000,
         "fast_shipping": false
       },
       {
@@ -25,7 +25,7 @@
         "brand": "Jordon",
         "en_name": "Jordon6 camain retro",
         "ko_name": "조던6 카마인 레트로",
-        "buy_now_price": "364,000원",
+        "buy_now_price": 364000,
         "fast_shipping": true
       },
       {
@@ -34,7 +34,7 @@
         "brand": "Converse",
         "en_name": "Converse Runstarhike black",
         "ko_name": "컨버스 런스타 하이크 블랙",
-        "buy_now_price": "184,000원",
+        "buy_now_price": 184000,
         "fast_shipping": true
       },
       {
@@ -43,7 +43,7 @@
         "brand": "NIke",
         "en_name": "Nike Dunk Low Retro Black",
         "ko_name": "나이키 덩크 로우 레트로 블랙",
-        "buy_now_price": "284,000원",
+        "buy_now_price": 284000,
         "fast_shipping": false
       },
       {
@@ -52,7 +52,7 @@
         "brand": "NIke",
         "en_name": "Nike Sakai",
         "ko_name": "나이키 사카이",
-        "buy_now_price": "400,000원",
+        "buy_now_price": 400000,
         "fast_shipping": true
       },
       {
@@ -61,7 +61,7 @@
         "brand": "Converse",
         "en_name": "Converse Runstarhike black",
         "ko_name": "컨버스 런스타 하이크 블랙",
-        "buy_now_price": "184,000원",
+        "buy_now_price": 184000,
         "fast_shipping": true
       },
       {
@@ -70,7 +70,7 @@
         "brand": "Jordon",
         "en_name": "Jordon6 camain retro",
         "ko_name": "조던6 카마인 레트로",
-        "buy_now_price": "364,000원",
+        "buy_now_price": 364000,
         "fast_shipping": true
       },
       {
@@ -79,7 +79,7 @@
         "brand": "NIke",
         "en_name": "Nike Dunk Low Retro Black",
         "ko_name": "나이키 덩크 로우 레트로 블랙",
-        "buy_now_price": "284,000원",
+        "buy_now_price": 284000,
         "fast_shipping": false
       }
     ]
