@@ -12,14 +12,14 @@ import Redirect from './components/KakaoLogin/Redirect';
 
 function Router() {
   return (
-    <>
+    <BrowserRouter>
       <Nav />
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/main" element={<Main />} />
           <Route path="/main" element={<Redirect />} />
           {/* <Route path="/users/signin" element={<Redirect />} /> */}
-          <Route path="/main" element={<Main />} />
           <Route path="/detail" element={<ProductDetail />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/order" element={<Order />} />
@@ -27,7 +27,7 @@ function Router() {
         </Routes>
       </BrowserRouter>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 export default Router;
