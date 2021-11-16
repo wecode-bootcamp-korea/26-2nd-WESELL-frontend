@@ -1,9 +1,13 @@
-import { useState, React } from 'react';
+import { React, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import KakaoLogin from '../../components/KakaoLogin/KakaoLogin';
 // import Theme from '../../styles/theme';
 
 function Login() {
+  // useEffect(() => {
+  //   console.log(Kakao.isInitialized());
+  // }, []);
+
   return (
     <Body>
       <TitleMargin margin="0px 0px 40px 0px">
