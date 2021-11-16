@@ -1,0 +1,94 @@
+{
+  "brandButton": [
+    {
+      "image_url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1760&q=80",
+      "brand": "조던"
+    },
+    {
+      "image_url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1760&q=80",
+      "brand": "나이키"
+    },
+    {
+      "image_url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1760&q=80",
+      "brand": "나이키"
+    },
+    {
+      "image_url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1760&q=80",
+      "brand": "컨버스"
+    },
+    {
+      "image_url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1760&q=80",
+      "brand": "컨버스"
+    },
+    {
+      "image_url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1760&q=80",
+      "brand": "반스"
+    },
+    {
+      "image_url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1760&q=80",
+      "brand": "반스"
+    }
+  ],
+  "leftButton": [
+    {
+      "maincategory": "카테고리",
+      "subcategory": "모든 카테고리",
+      "detailCategorylist": [
+        {
+          "brandlist": "패션소품"
+        },
+        {
+          "brandlist": "테크니컬"
+        },
+        {
+          "brandlist": "스니커스"
+        },
+        {
+          "brandlist": "라이프"
+        }
+      ]
+    },
+    {
+      "maincategory": "브랜드",
+      "subcategory": "모든 브랜드",
+      "detailCategorylist": [
+        {
+          "brandlist": "나이키"
+        },
+        {
+          "brandlist": "조던"
+        },
+        {
+          "brandlist": "반스"
+        },
+        {
+          "brandlist": "컨버스"
+        },
+        {
+          "brandlist": "디올"
+        }
+      ]
+    },
+    {
+      "maincategory": "스니커즈 사이즈",
+      "subcategory": "모든 사이즈",
+      "detailCategorylist": [
+        {
+          "brandlist": "250"
+        },
+        {
+          "brandlist": "260"
+        },
+        {
+          "brandlist": "270"
+        },
+        {
+          "brandlist": "280"
+        },
+        {
+          "brandlist": "290"
+        }
+      ]
+    }
+  ]
+}
