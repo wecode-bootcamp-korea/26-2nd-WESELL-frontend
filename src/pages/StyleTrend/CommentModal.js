@@ -7,12 +7,12 @@ import styled from 'styled-components';
 const CommentModal = ({ ModalClose, modalData }) => {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
-  const [files, setFiles] = useState('');
+  const [imgFiles, setImgFiles] = useState(null);
   const { id, user_email } = modalData;
 
   // CommentModal에서만 사용되는 함수
   const UploadFile = e => {
-    setFiles(e.target.files[0]);
+    setImgFiles(e.target.files[0]);
   };
   const detectComment = e => {
     setComment(e.target.value);
@@ -24,6 +24,26 @@ const CommentModal = ({ ModalClose, modalData }) => {
 
   const ClickComment = e => {
     addComment();
+    // e.preventDefault();
+    const formData = new FormData();
+    formData.append('content', comment);
+    formData.append('filename', imgFiles);
+    fetch(`http://10.58.3.89:8000/reviews/1/comment`, {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('토큰발급확인'), // 체크
+      },
+      body: formData,
+    })
+      .then(res => res.json())
+      .then(commentInfo => {
+        if (commentInfo.message !== null) {
+          alert('댓글이 등록 되었습니다!');
+          setComment(commentInfo);
+        } else {
+          alert('댓글을 작성해 주세요');
+        }
+      });
   };
 
   const EnterkeyComment = e => {
@@ -35,29 +55,6 @@ const CommentModal = ({ ModalClose, modalData }) => {
       }
     }
   };
-
-  // const imgSelect = e => {
-  //   e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append('filename', files);
-
-  //   fetch(`/data/styleData.json`, {
-  //     method: 'POST',
-  //     headers: {
-  //       Authorization: localStorage.getItem('back_token'),
-  //     },
-  //     body: formData,
-  //   })
-  //     .then(res => res.json())
-  //     .then(imgInfo => {
-  //       if (imgInfo.message === 'SUCCESS') {
-  //         alert('프로필이 업로드 되었습니다!');
-  //         setFiles(imgInfo);
-  //       } else {
-  //         alert('프로필 사진을 업로드 해 주세요!');
-  //       }
-  //     });
-  // };
 
   return (
     <ModalContainer key={id}>
@@ -111,14 +108,15 @@ const CommentModal = ({ ModalClose, modalData }) => {
         </CommentBox>
 
         <GuestComment>
-          {files ? (
+          {imgFiles && (
             <ImgFiles
               key="id"
-              src={URL.createObjectURL(files)}
+              src={URL.createObjectURL(imgFiles)}
+              onChange={UploadFile}
               alt="업로드 사진"
               style={{ width: '80px' }}
             />
-          ) : null}
+          )}
           {commentList.map((comment, index) => {
             return (
               <NewComment key={index}>
@@ -279,6 +277,6 @@ const PostButton = styled.button``;
 
 const GuestComment = styled.ul``;
 
-const ImgFiles = styled.img;
+const ImgFiles = styled.img``;
 
 export default CommentModal;
