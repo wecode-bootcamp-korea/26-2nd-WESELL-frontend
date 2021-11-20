@@ -100,7 +100,7 @@ const FollowBtn = styled.div`
 `;
 
 const FeedImg = styled.img`
-  width: 500px;
+  width: 450px;
   height: 500px;
   /* background-color: tomato; */
   margin-bottom: 10px;
