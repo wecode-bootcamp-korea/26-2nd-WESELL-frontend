@@ -1,0 +1,30 @@
+{
+  "result": [
+    {
+      "id": "1",
+      "profileName": "jiwon",
+      "uploadTime": "1시간 전",
+      "feedImage": "public/images/신발사진_001.jpg",
+      "productTag": "1개",
+      "productImage": "신발이미지",
+      "productName": "jordan1",
+      "productPrice": "100000",
+      "likeCount": "30",
+      "commentText": "댓글 0번",
+      "moreComment": "더보기 했을 때 뜨는 댓글"
+    },
+    {
+      "id": "2",
+      "profileName": "sung-ho",
+      "uploadTime": "2시간 전",
+      "feedImage": "이미지",
+      "productTag": "2개",
+      "productImage": "public/images/신발사진_002.jpg",
+      "productName": "jordan2",
+      "productPrice": "200000",
+      "likeCount": "31",
+      "commentText": "댓글 1번",
+      "moreComment": "더보기 했을 때 뜨는 댓글"
+    }
+  ]
+}
