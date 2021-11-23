@@ -27,7 +27,11 @@ export default function Slider() {
       {slideData.map((slide, index) => {
         return (
           <Slide key={slide.id} isSelected={slideIndex === index + 1}>
-            <SlideImg src={`/images/img${index + 1}.jpg`} alt={slide.title} />
+            <ImageDescription>
+              <Title>{slide.title}</Title>
+              <Subtitle>{slide.subtitle}</Subtitle>
+            </ImageDescription>
+            <SlideImg src={`/images/Image${index + 1}.png`} alt={slide.title} />
           </Slide>
         );
       })}
@@ -49,7 +53,7 @@ export default function Slider() {
 
 const Container = styled.div`
   position: relative;
-  max-width: 700px;
+  /* max-width: 700px; */
   height: 500px;
   margin: 120px auto 100px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -60,8 +64,33 @@ const Slide = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+  background-color: lightslategray;
   opacity: ${props => (props.isSelected ? 1 : 0)};
   transition: opacity ease-in-out 0.4s;
+`;
+
+const ImageDescription = styled.div`
+  position: absolute;
+  top: 45%;
+  left: 15%;
+`;
+
+const Title = styled.div`
+  margin-bottom: 10px;
+  color: white;
+  font-size: 50px;
+`;
+
+const Subtitle = styled.div`
+  color: white;
+  font-size: 30px;
+`;
+
+const SlideImg = styled.img`
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: scale(1.4);
 `;
 
 const DotContainer = styled.div`
@@ -79,5 +108,3 @@ const Dot = styled.div`
   margin: 0 10px;
   background: ${props => (props.isSelected ? 'white' : 'gray')};
 `;
-
-const SlideImg = styled.img``;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import FilterOptionContainer from './FliterAside/FilterOptionContainer';
 import ProductList from './ProductList/ProductList';
-import TopsideContainer from './Topside/TopsideContainer';
+// import TopsideContainer from './Topside/TopsideContainer';
 
 export default function Shop() {
   const [brandButton, setBrandButton] = useState([]);
@@ -18,7 +18,7 @@ export default function Shop() {
   return (
     <WholeShop>
       <ShopWrapper>
-        <TopsideContainer />
+        {/* <TopsideContainer /> */}
         <ShoeBrandBtn>
           {brandButton.map((brandBox, idx) => (
             <BrandTag key={idx}>

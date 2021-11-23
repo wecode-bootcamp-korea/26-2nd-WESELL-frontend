@@ -1,8 +1,9 @@
 import { React, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import ProductCard from './ProductCard';
+import ProductCardMain from './ProductCardMain';
+import { API } from '../../config';
 
-const ProductCardWrap = () => {
+export default function ProductCardWrap({ sort }) {
   const [cardList, setCardList] = useState([]);
   const [shownIndex, setShownIndex] = useState(4);
 
@@ -11,24 +12,24 @@ const ProductCardWrap = () => {
   }
 
   useEffect(() => {
-    fetch('/data/ProductCardList.json')
+    fetch(`${API.sortBy}${sort}`)
       .then(res => res.json())
       .then(data => {
-        setCardList(data.result.product);
+        setCardList(data.products.productslist);
       });
   }, []);
 
   return (
     <Container>
       {cardList.slice(0, shownIndex).map(card => (
-        <ProductCard key={card.id} cards={card} />
+        <ProductCardMain key={card.id} cards={card} />
       ))}
-      {shownIndex <= cardList.length && (
+      {shownIndex < cardList.length && (
         <ShowMoreBtn onClick={showMore}>더보기</ShowMoreBtn>
       )}
     </Container>
   );
-};
+}
 
 const Container = styled.div`
   position: relative;
@@ -49,5 +50,3 @@ const ShowMoreBtn = styled.button`
   border-radius: 10px;
   cursor: pointer;
 `;
-
-export default ProductCardWrap;
