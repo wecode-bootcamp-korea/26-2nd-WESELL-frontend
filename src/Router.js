@@ -9,6 +9,8 @@ import Nav from './components/Nav/Nav';
 import Footer from './components/Footer';
 import Login from './pages/LoginRegister/Login';
 import Redirect from './components/KakaoLogin/Redirect';
+import Buy from './pages/Order/Buy';
+import BuyDetail from './pages/Order/BuyDetail';
 
 function Router() {
   return (
@@ -24,7 +26,9 @@ function Router() {
           <Route path="/products" element={<Shop />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/order" element={<Order />} />
-          <Route path="/modal" element={<Modal />} />
+          {/* <Route path="/modal" element={<Modal />} /> */}
+          <Route path="/buy" element={<Buy />} />
+          <Route path="/buy/detail" element={<BuyDetail />} />
         </Routes>
       </BrowserRouter>
       <Footer />
