@@ -13,14 +13,14 @@ export default function Main() {
     <Container>
       <MainSlider />
       <ProductCardTitle title="Just Dropped" subtitle="발매 상품" />
-      <ProductCardWrap url="/" />
+      <ProductCardWrap sort="release_date" />
       <Advertisement
         imageUrl={adList[0].image_url}
         title={adList[0].title}
         description={adList[0].description}
       />
       <ProductCardTitle title="Most Popular" subtitle="인기 상품" />
-      <ProductCardWrap url="/" />
+      <ProductCardWrap sort="-price" />
       <Advertisement
         imageUrl={adList[1].image_url}
         title={adList[1].title}
