@@ -30,26 +30,14 @@ const LoginGrayBtn = styled.button`
   border-radius: 8px;
 `;
 
-const KakaoBtn = styled.button`
-  width: 300px;
-  height: 40px;
-  font-weight: 700;
-  font-size: 16px;
+const KakaoBtn = styled(LoginGrayBtn)`
   background-color: #f7e600;
   color: ${props => props.fontColor};
-  border: none;
-  border-radius: 8px;
 `;
 
-const NaverBtn = styled.button`
-  width: 300px;
-  height: 40px;
-  font-weight: 700;
-  font-size: 16px;
+const NaverBtn = styled(LoginGrayBtn)`
   background-color: #2db400;
   color: ${props => props.fontColor};
-  border: none;
-  border-radius: 8px;
 `;
 
 export default LoginBtn;
