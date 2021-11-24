@@ -1,16 +1,17 @@
 import { React, useEffect } from 'react';
-import { REDIRECT_URI, SIGNIN } from './Oauth';
-import { useNavigate } from 'react-router-dom';
+import { CLIENT_ID, REDIRECT_URI, SIGNIN } from './Oauth';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { queryStringBody } from '../../utils/queryStringBody';
 
 const Redirect = () => {
-  const accessCode = new URL(window.location.href).searchParams.get('code');
+  const [searchParams] = useSearchParams();
+  const accessCode = searchParams.get('code');
   const navigate = useNavigate();
 
   useEffect(() => {
     const bodyData = {
       grant_type: 'authorization_code',
-      client_id: 'c20e78f6f53398ae9e12a866b8790ce1',
+      client_id: CLIENT_ID,
       redirect_uri: REDIRECT_URI,
       code: accessCode,
     };
