@@ -68,7 +68,7 @@ export default function ProductList() {
             모든배송
             <RiArrowUpDownLine />
           </PopularBtn>
-          {!openSortCategory && (
+          {openSortCategory && (
             <SortingBox
               released={sortQuickRelease}
               reverseReleased={sortReverseRelease}
@@ -90,7 +90,7 @@ export default function ProductList() {
 const RightSide = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 40px;
+  grid-gap: 10px;
   padding: 30px 20px;
 `;
 const QuickPopular = styled.div`

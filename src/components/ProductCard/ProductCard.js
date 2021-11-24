@@ -14,7 +14,7 @@ function ProductCard({ cardlist }) {
         <ProductEngName>{en_name}</ProductEngName>
         <ProductKrName>{ko_name}</ProductKrName>
       </NameWrapper>
-      <Productprice>{buy_now_price}</Productprice>
+      <Productprice>{buy_now_price}원</Productprice>
       <DirectPurChase>즉시 구매가</DirectPurChase>
       {fast_shipping && (
         <QuickDeliver>
@@ -29,12 +29,12 @@ function ProductCard({ cardlist }) {
 export default ProductCard;
 
 const ProductContainer = styled.div`
-  /* width: 200px; */
-  padding: 5px 5px;
+  padding: 5px 10px;
+  width: 270px;
 `;
 
 const ProductImg = styled.img`
-  width: 220px;
+  width: 260px;
   height: 230px;
   border-radius: 10px;
 `;
@@ -61,9 +61,8 @@ const DirectPurChase = styled.div`
 `;
 
 const QuickDeliver = styled.div`
-  display: flex;
-  /* width: 65px; */
-  padding: 5px 1px;
+  display: inline-block;
+  padding: 5px 5px;
   margin: 10px 0 10px 0;
   border: 1px solid green;
   border-radius: 5px;
