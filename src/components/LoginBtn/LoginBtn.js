@@ -5,9 +5,9 @@ function LoginBtn() {
   return (
     <LoginButton>
       <LoginGrayBtn>로그인</LoginGrayBtn>
-      <KakaoBtn fontColor="#556677"> 카카오 로그인</KakaoBtn>
+      <KakaoBtn> 카카오 로그인</KakaoBtn>
 
-      <NaverBtn fontColor="white">네이버 로그인</NaverBtn>
+      <NaverBtn>네이버 로그인</NaverBtn>
     </LoginButton>
   );
 }
@@ -32,12 +32,12 @@ const LoginGrayBtn = styled.button`
 
 const KakaoBtn = styled(LoginGrayBtn)`
   background-color: #f7e600;
-  color: ${props => props.fontColor};
+  color: black;
 `;
 
 const NaverBtn = styled(LoginGrayBtn)`
   background-color: #2db400;
-  color: ${props => props.fontColor};
+  color: white;
 `;
 
 export default LoginBtn;
