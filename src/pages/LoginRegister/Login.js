@@ -4,13 +4,9 @@ import KakaoLogin from '../../components/KakaoLogin/KakaoLogin';
 function Login() {
   return (
     <LoginContainer>
-      <TitleBox margin="0px 0px 40px 0px">
-        <Title fontSize="50px" fontWeight="bold">
-          WESELL
-        </Title>
-        <SubTitle marginTopBtm="10px 0px" fontSize="15px" fontWeight="bold">
-          We Ensure Society Effects
-        </SubTitle>
+      <TitleBox>
+        <Title>WESELL</Title>
+        <SubTitle>We Ensure Society Effects</SubTitle>
       </TitleBox>
 
       <InputContainer>
@@ -25,10 +21,8 @@ function Login() {
       <LoginButton>
         <LoginText>로그인</LoginText>
         <KakaoLogin />
-        <NaverBtn fontColor="white">네이버 로그인</NaverBtn>
+        <NaverBtn>네이버 로그인</NaverBtn>
       </LoginButton>
-
-      {/* <Logout /> */}
     </LoginContainer>
   );
 }
@@ -46,7 +40,7 @@ const LoginContainer = styled.div`
 // 로그인 타이틀 부분
 
 const TitleBox = styled.div`
-  margin: ${props => props.margin};
+  margin: 0px 80px 40px 0px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -54,16 +48,16 @@ const TitleBox = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: ${props => props.fontSize};
-  font-weight: ${props => props.fontWeight};
+  font-size: 50px;
+  font-weight: 700;
   color: '#2D2B2B';
   font-style: italic;
 `;
 
 const SubTitle = styled.div`
-  margin: ${props => props.marginTopBtm};
-  font-size: ${props => props.fontSize};
-  font-weight: ${props => props.fontWeight};
+  margin: 10px 0px;
+  font-size: 15px;
+  font-weight: 700;
   color: '#2D2B2B';
 `;
 
@@ -115,7 +109,7 @@ const NaverBtn = styled.button`
   font-weight: 700;
   font-size: 16px;
   background-color: #2db400;
-  color: ${props => props.fontColor};
+  color: white;
   border: none;
   border-radius: 4px;
 `;

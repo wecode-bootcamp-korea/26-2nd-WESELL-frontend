@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import Theme from '../../styles/theme';
-
 function LoginTitle() {
   return (
     <Container>
       <Title>WESELL</Title>
-      <SubTitle>We Ensure Society Effects L L</SubTitle>
+      <SubTitle>We Ensure Society Effects </SubTitle>
     </Container>
   );
 }
