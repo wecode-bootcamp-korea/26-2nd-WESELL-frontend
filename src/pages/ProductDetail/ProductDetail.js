@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ColumnTop from './ColumnTop';
 import ProductInfo from './ProductInfo';
-import MarketPrice from './MarketPrice';
+// import MarketPrice from './MarketPrice';
 
 export default function ProductDetail() {
   return (
@@ -13,7 +13,7 @@ export default function ProductDetail() {
       <ProductInfoSection>
         <ColumnTop />
         <ProductInfo />
-        <MarketPrice />
+        {/* <MarketPrice /> */}
       </ProductInfoSection>
     </Wrapper>
   );

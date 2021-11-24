@@ -25,9 +25,9 @@ const BrandList = [
   },
   {
     id: 5,
-    ko_name: '디올',
-    en_name: 'Dior',
-    url: 'https://images.unsplash.com/photo-1614521911663-21d88bd0714a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+    ko_name: '아디다스',
+    en_name: 'Adidas',
+    url: 'https://images.unsplash.com/photo-1555274175-75f4056dfd05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
   },
 ];
 
