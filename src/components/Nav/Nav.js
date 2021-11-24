@@ -8,7 +8,7 @@ export default function Nav() {
   const [isVisible, setIsVisible] = useState(false);
 
   const searchToggle = () => {
-    setIsVisible(isVisible ? false : true);
+    setIsVisible(prev => !prev);
   };
 
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ export default function Nav() {
     navigate('/login');
   };
   const moveToShop = () => {
-    navigate('/shop');
+    navigate('/product');
   };
   const moveToStyle = () => {
     navigate('/style');
