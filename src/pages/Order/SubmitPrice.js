@@ -33,7 +33,7 @@ export default function SubmitPrice({
     }
   };
 
-  const postOrderNow = e => {
+  const postOrderNow = () => {
     fetch(`${API.fetchPrice}/${id}/orders`, {
       method: 'POST',
       body: JSON.stringify({
@@ -45,7 +45,7 @@ export default function SubmitPrice({
     }).then(res => res.json());
   };
 
-  const deleteBid = e => {
+  const deleteBid = () => {
     fetch(`${API.fetchPrice}/${id}`, {
       method: 'DELETE',
       body: JSON.stringify({
