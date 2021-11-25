@@ -4,28 +4,27 @@ import styled from 'styled-components';
 import ShoesInfo from './ShoesInfo';
 import orderType from './orderType';
 import { useParams } from 'react-router';
+import { API } from '../../config';
 
 const { buy, sell } = orderType;
 
 export default function Order({ type }) {
   const [productList, setProductList] = useState({});
-  const { productId } = useParams();
+  const { productID } = useParams();
 
   useEffect(() => {
-    fetch('/data/OrderMockData.json')
+    fetch(`${API.baseUrl}/products/${productID}`)
       .then(res => res.json())
-      .then(data => {
-        setProductList(data.result);
-      });
-  }, []);
+      .then(data => setProductList(data.result));
+  }, [productID]);
 
   const navigate = useNavigate();
 
   const moveToOrderDetail = () => {
     navigate(
       type === buy
-        ? `/${buy}/detail/${productId}`
-        : `/${sell}/detail${productId}`
+        ? `/${buy}/details/${productID}`
+        : `/${sell}/details/${productID}`
     );
   };
 
@@ -37,7 +36,7 @@ export default function Order({ type }) {
     <Container>
       <OrderWrap>
         <Title>{type === buy ? '구매하기' : '판매하기'}</Title>
-        <ShoesInfo />
+        <ShoesInfo data={productList} />
         <SizeListGrid>
           {isBuyOrSell?.sizes.map(list => (
             <LinkBtn key={list.id} onClick={moveToOrderDetail}>
