@@ -2,11 +2,9 @@ import { React, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router';
 import Option from './FliterOption/Option';
-import { API } from '../../../config';
 
 function FilterOptionContainer() {
   const [filterOptions, setFilterOptions] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,18 +18,12 @@ function FilterOptionContainer() {
   };
 
   useEffect(() => {
-    fetch(`${API.baseUrl}${location.pathname + location.search}`)
-      .then(res => res.json())
-      .then(category => {
-        setFilteredData(category.filterOptions);
-      });
-
     fetch('/data/ShopCategoryDate.json')
       .then(res => res.json())
       .then(category => {
         setFilterOptions(category.filterOptions);
       });
-  }, [location.search, filteredData]);
+  }, [location.search, location.pathname]);
 
   return (
     <div>

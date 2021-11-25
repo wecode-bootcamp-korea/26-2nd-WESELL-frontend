@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-// import { FaRegArrowAltCircleDown } from 'react-icons/fa';
 import { Line } from 'react-chartjs-2';
 import { Modal } from './components/Modal';
 import TransitionHistoryModalStyling from '../ProductDetail/components/TransitionHistoryModalStyling';
 import DropDownMenu from '../ProductDetail/components/DropDownMenu';
 import { API } from '../../config';
+import { useParams } from 'react-router';
 
 const options = {
   scales: {
@@ -16,10 +16,10 @@ const options = {
 };
 export default function MarketPrice() {
   const [showModal, setShowModal] = useState(false);
-  const [first, setFirst] = useState();
-  const [marketPriceData, setMarketPriceData] = useState(first);
+  const [marketPriceData, setMarketPriceData] = useState();
   const [currentSizeSelected, setCurrentSizeSelected] = useState('test');
-  // https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/Line.js
+  const { productID } = useParams();
+
   const data = {
     labels: ['1', '2', '3', '4', '5', '6'],
     datasets: [
@@ -39,38 +39,15 @@ export default function MarketPrice() {
     setCurrentSizeSelected(curSizeSelected);
   };
 
-  // useEffect(() => {
-  //   fetch(`/data/detailPageData.json`)
-  //     .then(res => res.json())
-  //     .then(data => setDetailPageData(data.result));
-  // }, []);
-
   useEffect(() => {
-    fetch(`${API.baseUrl}/products/2`)
+    fetch(`${API.baseUrl}/products/${productID}`)
       .then(res => res.json())
       .then(data => setDetailPageData(data.result));
-  }, []);
-  console.log(detailPageData);
-  // useEffect(() => {
-  //   fetch(`/data/detailPageData.json`)
-  //     .then(res => res.json())
-  //     .then(data =>
-  //       setFirst(
-  //         data.result.market_price.map(
-  //           item =>
-  //             item.sizes.map(({ avg_price, size }, index) => {
-  //               if (size === '230') {
-  //                 return avg_price;
-  //               }
-  //             })[0]
-  //         )
-  //       )
-  //     );
-  // }, []);
+  }, [productID]);
 
   useEffect(() => {
     let targetNum;
-    fetch(`${API.baseUrl}/products/2`)
+    fetch(`${API.baseUrl}/products/${productID}`)
       .then(res => res.json())
       .then(data =>
         setMarketPriceData(
@@ -81,11 +58,12 @@ export default function MarketPrice() {
                   targetNum = index;
                   return avg_price;
                 }
+                return avg_price;
               })[targetNum]
           )
         )
       );
-  }, [currentSizeSelected]);
+  }, [currentSizeSelected, productID]);
   const [currentMenuIndex, setCurrentMenuIndex] = useState(1);
 
   const handleSelectedMenu = tabIndex => {
@@ -100,8 +78,6 @@ export default function MarketPrice() {
       <TitleWrapper>
         <MarketPriceTitle>시세</MarketPriceTitle>
         <ShowAllSizes>
-          {/* <AllSize>230</AllSize>
-          <FaRegArrowAltCircleDown /> */}
           <DropDownMenu setCurSize={setCurSize} type="MarketPrice" />
         </ShowAllSizes>
       </TitleWrapper>
@@ -187,13 +163,6 @@ const ShowAllSizes = styled.div`
   margin-left: 370px;
 `;
 
-// const AllSize = styled.span`
-//   display: inline-block;
-//   margin-right: 5px;
-//   margin-left: 350px;
-//   font-size: 18px;
-// `;
-
 const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -222,28 +191,23 @@ const TableWrapper = styled.div`
 
 const TableColumnSetting = styled.div`
   display: flex;
-  /* margin-top: 5px; */
   border-bottom: 1px solid #ebebeb;
   padding-bottom: 9px;
-  /* text-align: right; */
 `;
 
 const SizeName = styled.div`
-  /* display: inline-block; */
   margin-right: 250px;
   font-size: 12px;
   color: rgba(34, 34, 34, 0.5);
   font-weight: 400;
 `;
 const PriceName = styled.div`
-  /* display: inline-block; */
   margin-right: 150px;
   font-size: 12px;
   color: rgba(34, 34, 34, 0.5);
   font-weight: 400;
 `;
 const DateName = styled.div`
-  /* display: inline-block; */
   font-size: 12px;
   color: rgba(34, 34, 34, 0.5);
   font-weight: 400;

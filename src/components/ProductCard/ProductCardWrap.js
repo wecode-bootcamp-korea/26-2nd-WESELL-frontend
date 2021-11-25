@@ -17,7 +17,7 @@ export default function ProductCardWrap({ sort }) {
       .then(data => {
         setCardList(data.products.productslist);
       });
-  }, []);
+  }, [sort]);
 
   return (
     <Container>

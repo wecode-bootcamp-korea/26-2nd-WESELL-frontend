@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { API } from '../../config';
+import { useParams } from 'react-router';
 
 export default function ProductInfo() {
   const [productInfoData, setProductInfoData] = useState({
@@ -9,18 +10,13 @@ export default function ProductInfo() {
     color: '',
     release_price: '',
   });
-
-  // useEffect(() => {
-  //   fetch(`/data/detailPageData.json`)
-  //     .then(res => res.json())
-  //     .then(data => setProductInfoData(data.result.product_info));
-  // }, []);
+  const { productID } = useParams();
 
   useEffect(() => {
-    fetch(`${API.baseUrl}/products/4`)
+    fetch(`${API.baseUrl}/products/${productID}`)
       .then(res => res.json())
       .then(data => setProductInfoData(data.result.product_info));
-  }, []);
+  }, [productID]);
 
   return (
     <ProductInfoWrapper>

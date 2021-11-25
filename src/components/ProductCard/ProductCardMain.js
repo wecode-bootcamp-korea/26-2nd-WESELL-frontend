@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 function ProductCardMain({ cards }) {
-  const { image_url, brand, en_name, ko_name, buy_now_price } = cards;
+  const { id, image_url, brand, en_name, ko_name, buy_now_price } = cards;
+
+  const navigate = useNavigate();
+
+  const linkToDetail = () => {
+    navigate(`/detail/${id}`);
+  };
 
   return (
-    <Container>
+    <Container onClick={linkToDetail}>
       <Image src={image_url.url} />
       <Brand>{brand}</Brand>
       <NameWrapper>
@@ -28,6 +35,7 @@ const Image = styled.img`
   width: 220px;
   height: 230px;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 const Brand = styled.div`

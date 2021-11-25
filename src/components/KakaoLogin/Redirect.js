@@ -27,7 +27,7 @@ const Redirect = () => {
       .then(res => res.json())
       .then(result => {
         const token = result.access_token;
-        console.log(token);
+
         if (token) {
           fetch(SIGNIN, {
             headers: {

@@ -25,9 +25,7 @@ export default function SubmitPrice({
           price: bidPrice,
         }),
         headers: { Authorization: token },
-      })
-        .then(res => res.json())
-        .then(res => console.log(res));
+      }).then(res => res.json());
     } else {
       e.preventDefault();
       alert('희망가를 입력하세요');
@@ -43,9 +41,7 @@ export default function SubmitPrice({
         price: orderNowPrice,
       }),
       headers: { Authorization: token },
-    })
-      .then(res => res.json())
-      .then(res => console.log(res));
+    }).then(res => res.json());
   };
 
   const deleteBid = e => {
@@ -57,9 +53,7 @@ export default function SubmitPrice({
         price: bidPrice,
       }),
       headers: { Authorization: token },
-    })
-      .then(res => res.json())
-      .then(res => console.log(res));
+    }).then(res => res.json());
   };
 
   const postAndDelete = () => {
