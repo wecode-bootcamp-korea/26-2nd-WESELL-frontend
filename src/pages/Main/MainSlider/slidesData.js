@@ -1,4 +1,4 @@
-const slideData = [
+const slidesData = [
   {
     id: 1,
     title: '규빈 페이로 결제하고,',
@@ -30,3 +30,5 @@ const slideData = [
     subtitle: '나이키와 원철과 언더커버의 콜라보',
   },
 ];
+
+export default slidesData;

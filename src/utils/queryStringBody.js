@@ -1,5 +1,5 @@
 export const queryStringBody = arg => {
-  Object.keys(arg)
+  return Object.keys(arg)
     .map(k => encodeURIComponent(k) + '=' + encodeURI(arg[k]))
     .join('&');
 };

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SlideBtn from './SlideBtn';
-import slideData from './SlideData';
+import slidesData from './slidesData';
 
 export default function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
 
   const nextSlide = () => {
-    slideIndex !== slideData.length
+    slideIndex !== slidesData.length
       ? setSlideIndex(prevSlideIndex => prevSlideIndex + 1)
       : setSlideIndex(1);
   };
@@ -15,7 +15,7 @@ export default function Slider() {
   const prevSlide = () => {
     slideIndex !== 1
       ? setSlideIndex(prevSlideIndex => prevSlideIndex - 1)
-      : setSlideIndex(slideData.length);
+      : setSlideIndex(slidesData.length);
   };
 
   const moveDot = index => {
@@ -24,7 +24,7 @@ export default function Slider() {
 
   return (
     <Container>
-      {slideData.map((slide, index) => {
+      {slidesData.map((slide, index) => {
         return (
           <Slide key={slide.id} isSelected={slideIndex === index + 1}>
             <ImageDescription>
