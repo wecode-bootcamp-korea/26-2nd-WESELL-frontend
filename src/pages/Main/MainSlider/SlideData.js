@@ -30,3 +30,5 @@ const slideData = [
     subtitle: '나이키와 원철과 언더커버의 콜라보',
   },
 ];
+
+export default slideData;
