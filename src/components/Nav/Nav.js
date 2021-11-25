@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import SearchBar from './SearchBar';
 import { BiSearch } from 'react-icons/bi';
 
-const token = localStorage.token;
+const token = localStorage.토큰발급확인;
 
 export default function Nav() {
   const [isVisible, setIsVisible] = useState(false);
