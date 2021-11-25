@@ -1,13 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GiElectric } from 'react-icons/gi';
+import { useNavigate } from 'react-router-dom';
 
 function ProductCard({ cardlist }) {
-  const { image_url, brand, en_name, ko_name, buy_now_price, fast_shipping } =
-    cardlist;
+  const {
+    id,
+    image_url,
+    brand,
+    en_name,
+    ko_name,
+    buy_now_price,
+    fast_shipping,
+  } = cardlist;
+
+  const navigate = useNavigate();
+
+  const linkToDetail = () => {
+    navigate(`/detail/${id}`);
+  };
 
   return (
-    <ProductContainer>
+    <ProductContainer onClick={linkToDetail}>
       <ProductImg src={image_url.url} alt="productImage" />
       <ProductBrand>{brand}</ProductBrand>
       <NameWrapper>
@@ -31,6 +45,7 @@ export default ProductCard;
 const ProductContainer = styled.div`
   padding: 5px 10px;
   width: 270px;
+  cursor: pointer;
 `;
 
 const ProductImg = styled.img`

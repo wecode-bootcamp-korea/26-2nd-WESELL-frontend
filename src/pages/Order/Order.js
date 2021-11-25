@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import ShoesInfo from './ShoesInfo';
 import orderType from './orderType';
+import { useParams } from 'react-router';
 
 const { buy, sell } = orderType;
 
 export default function Order({ type }) {
   const [productList, setProductList] = useState({});
+  const { productId } = useParams();
 
   useEffect(() => {
     fetch('/data/OrderMockData.json')
@@ -20,7 +22,11 @@ export default function Order({ type }) {
   const navigate = useNavigate();
 
   const moveToOrderDetail = () => {
-    navigate(type === buy ? `/${buy}/detail` : `/${sell}/detail`);
+    navigate(
+      type === buy
+        ? `/${buy}/detail/${productId}`
+        : `/${sell}/detail${productId}`
+    );
   };
 
   const [buying, selling] = productList.lowest_price_by_size || [];

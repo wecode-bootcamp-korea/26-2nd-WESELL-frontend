@@ -6,17 +6,18 @@ import { Modal } from './components/Modal';
 import SizeSelectModalStyling from './components/SizeSelectModalStyling';
 import { API } from '../../config';
 import { FaCaretDown } from 'react-icons/fa';
+import { useNavigate } from 'react-router';
 
-export default function Bargain() {
+export default function Bargain({ productID }) {
   const [showModal, setShowModal] = useState(false);
   const [modalLocation, setModalLocation] = useState(true);
   const [detailPageData, setDetailPageData] = useState([]);
 
   useEffect(() => {
-    fetch(`${API.baseUrl}/products/1`)
+    fetch(`${API.baseUrl}/products/${productID}`)
       .then(res => res.json())
       .then(data => setDetailPageData(data.result));
-  }, []);
+  }, [productID]);
 
   const openModal = e => {
     setShowModal(prev => !prev);
@@ -25,12 +26,20 @@ export default function Bargain() {
 
   const [productSize, setProductSize] = useState('230');
   const [productPrice, setProductPrice] = useState('351000');
+  const navigate = useNavigate();
 
   const handleClick = (size, price) => {
     setProductSize(size);
     setProductPrice(price);
   };
 
+  const linkToOrder = () => {
+    navigate('/buy', { state: productID });
+  };
+
+  const linkToSell = () => {
+    navigate('/sell', { state: productID });
+  };
   return (
     <BargainWrapper>
       <BargainSection>
@@ -89,7 +98,7 @@ export default function Bargain() {
           <ButtonWrapper>
             <Button>
               <ButtonDivision>
-                <ButtonTitle to="/order">구매</ButtonTitle>
+                <ButtonTitle onClick={linkToOrder}>구매</ButtonTitle>
                 <OrderContentWrapper>
                   <OrderPrice>235,000원</OrderPrice>
                   <OrderStatusName>즉시 구매가</OrderStatusName>
@@ -99,7 +108,7 @@ export default function Bargain() {
 
             <Button primary>
               <ButtonDivision>
-                <ButtonTitle to="/order">판매</ButtonTitle>
+                <ButtonTitle onClick={linkToSell}>판매</ButtonTitle>
                 <OrderContentWrapper>
                   <SellPrice>11,500원</SellPrice>
                   <SellStatusName>즉시 판매가</SellStatusName>
