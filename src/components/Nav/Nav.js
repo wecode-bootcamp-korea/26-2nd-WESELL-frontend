@@ -4,11 +4,19 @@ import styled from 'styled-components';
 import SearchBar from './SearchBar';
 import { BiSearch } from 'react-icons/bi';
 
+const token = localStorage.token;
+
 export default function Nav() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isToken, setIsToken] = useState(token);
 
   const searchToggle = () => {
     setIsVisible(prev => !prev);
+  };
+
+  const resetToken = () => {
+    setIsToken();
+    navigate('/');
   };
 
   const navigate = useNavigate();
@@ -35,9 +43,15 @@ export default function Nav() {
         <LinkBtn small>고객센터</LinkBtn>
         <LinkBtn small>관심상품</LinkBtn>
         <LinkBtn small>마이페이지</LinkBtn>
-        <LinkBtn small onClick={moveToLogin}>
-          로그인
-        </LinkBtn>
+        {isToken ? (
+          <LinkBtn small onClick={resetToken}>
+            로그아웃
+          </LinkBtn>
+        ) : (
+          <LinkBtn small onClick={moveToLogin}>
+            로그인
+          </LinkBtn>
+        )}
       </LinkBtnSection>
       <TitleLinks>
         <Title onClick={moveToMain}>WeSell</Title>
