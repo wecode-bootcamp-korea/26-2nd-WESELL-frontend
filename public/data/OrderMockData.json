@@ -1,0 +1,89 @@
+{
+  "result": {
+    "lowest_price_by_size": [
+      {
+        "bid_type": "Buy",
+        "sizes": [
+          {
+            "id": 11,
+            "lowest_price": 279000,
+            "size": "230"
+          },
+          {
+            "id": 12,
+            "lowest_price": 243000,
+            "size": "240"
+          },
+          {
+            "id": 13,
+            "lowest_price": 1270000,
+            "size": "250"
+          },
+          {
+            "id": 14,
+            "lowest_price": 3240000,
+            "size": "260"
+          },
+          {
+            "id": 15,
+            "lowest_price": 870000,
+            "size": "270"
+          }
+        ]
+      },
+      {
+        "bid_type": "Sell",
+        "sizes": [
+          {
+            "id": 11,
+            "lowest_price": 286000,
+            "size": "230"
+          },
+          {
+            "id": 12,
+            "lowest_price": 257000,
+            "size": "240"
+          },
+          {
+            "id": 13,
+            "lowest_price": 1350000,
+            "size": "250"
+          },
+          {
+            "id": 14,
+            "lowest_price": 3520000,
+            "size": "260"
+          },
+          {
+            "id": 15,
+            "lowest_price": 930000,
+            "size": "270"
+          }
+        ]
+      }
+    ],
+    "market_price": [],
+    "order_history": [],
+    "product_image": [
+      {
+        "id": 5,
+        "url": "https://github.com/Gyubs/django_setting_prcatice/blob/main/12_1.jpg?raw=true"
+      },
+      {
+        "id": 6,
+        "url": "https://github.com/Gyubs/django_setting_prcatice/blob/main/12_2.jpg?raw=true"
+      }
+    ],
+    "product_info": {
+      "brand": "Nike",
+      "color": "WHITE/BLACK",
+      "en_name": "Nike Dunk Low Retro Black",
+      "fast_shipping": true,
+      "id": 3,
+      "ko_name": "나이키 덩크 로우 레트로 블랙",
+      "model_number": "DD1391-100",
+      "release_date": "2021-01-14",
+      "release_price": 119000
+    }
+  }
+}

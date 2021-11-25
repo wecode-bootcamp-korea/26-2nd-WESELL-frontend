@@ -20,7 +20,7 @@ export default function Nav() {
     navigate('/login');
   };
   const moveToShop = () => {
-    navigate('/product');
+    navigate('/products');
   };
   const moveToStyle = () => {
     navigate('/style');

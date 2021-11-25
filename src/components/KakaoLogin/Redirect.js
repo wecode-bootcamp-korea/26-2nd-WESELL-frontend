@@ -35,16 +35,15 @@ const Redirect = () => {
             },
           })
             .then(res => res.json())
-            .then(result => {
-              localStorage.setItem('토큰발급확인', result.access_token);
+            .then(token => {
+              localStorage.setItem('토큰발급확인', token);
+
               navigate('/main');
             });
         }
       });
   }, [accessCode, navigate]);
-  return (
-    <div>무조건 렌더링 하나 해줘야 합니다. 기억하세요라고 강지원이 씀 ㄹㅇ</div>
-  );
+  return <div>렌더링 완료</div>;
 };
 
 export default Redirect;
