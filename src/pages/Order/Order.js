@@ -36,7 +36,7 @@ export default function Order({ type }) {
     <Container>
       <OrderWrap>
         <Title>{type === buy ? '구매하기' : '판매하기'}</Title>
-        <ShoesInfo data={productList} />
+        <ShoesInfo id={productID} />
         <SizeListGrid>
           {isBuyOrSell?.sizes.map(list => (
             <LinkBtn key={list.id} onClick={moveToOrderDetail}>

@@ -12,12 +12,13 @@ export default function SubmitPrice({
   bidPrice,
   size,
   type,
+  id,
 }) {
   const [buy, sell] = [1, 2];
 
   const postBid = e => {
     if (bidPrice) {
-      fetch(`${API.fetchPrice}/1`, {
+      fetch(`${API.fetchPrice}/${id}`, {
         method: 'POST',
         body: JSON.stringify({
           bid_type: type === 'buy' ? buy : sell,
@@ -33,7 +34,7 @@ export default function SubmitPrice({
   };
 
   const postOrderNow = e => {
-    fetch(`${API.fetchPrice}/1/orders`, {
+    fetch(`${API.fetchPrice}/${id}/orders`, {
       method: 'POST',
       body: JSON.stringify({
         bid_type: type === 'buy' ? buy : sell,
@@ -45,7 +46,7 @@ export default function SubmitPrice({
   };
 
   const deleteBid = e => {
-    fetch(`${API.fetchPrice}/1`, {
+    fetch(`${API.fetchPrice}/${id}`, {
       method: 'DELETE',
       body: JSON.stringify({
         bid_type: type === 'buy' ? sell : buy,

@@ -6,7 +6,7 @@ import orderType from './orderType';
 
 const { buyNow, sellNow, buyBid, sellBid } = orderType;
 
-export default function OrderHow({ title, orderNowPrice, size, type }) {
+export default function OrderHow({ title, orderNowPrice, size, type, id }) {
   const [bidPrice, setBidPrice] = useState();
 
   const bidding = e => {
@@ -44,6 +44,7 @@ export default function OrderHow({ title, orderNowPrice, size, type }) {
         bidPrice={bidPrice}
         size={size}
         type={type}
+        id={id}
       />
     </Container>
   );

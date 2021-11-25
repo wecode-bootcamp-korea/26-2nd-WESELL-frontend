@@ -12,20 +12,13 @@ export default function OrderDetail({ type }) {
   const isBuy = type === buy;
 
   const [title, setTitle] = useState(isBuy ? buyNow : sellNow);
-  const [shoeInfo, setShoeInfo] = useState([]);
-
-  // useEffect(() => {
-  //   fetch('/data/OrderMockData.json')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setShoeInfo(data.result.lowest_price_by_size);
-  //     });
-  // }, []);
+  const [shoePrice, setShoePrice] = useState([]);
+  const { productID } = useParams();
 
   useEffect(() => {
     fetch(`${API.baseUrl}/products/${productID}`)
       .then(res => res.json())
-      .then(data => setShoeInfo(data.result.lowest_price_by_size));
+      .then(data => setShoePrice(data.result.lowest_price_by_size));
   }, [productID]);
 
   const changeToOrderNow = () => {
@@ -36,13 +29,13 @@ export default function OrderDetail({ type }) {
     setTitle(isBuy ? buyBid : sellBid);
   };
 
-  const [shoesToBuy, shoesToSell] = shoeInfo;
+  const [shoesToBuy, shoesToSell] = shoePrice;
 
   return (
     <Container>
       <OrderWrap>
         <Title>{title}하기</Title>
-        <ShoesInfo />
+        <ShoesInfo id={productID} />
         <PriceInfo>
           <PriceNow>
             <PriceTitle> {buyNow}가 </PriceTitle>
@@ -73,13 +66,14 @@ export default function OrderDetail({ type }) {
         <OrderHow
           title={title}
           orderNowPrice={
-            shoeInfo[0] &&
+            shoePrice[0] &&
             (isBuy
               ? shoesToBuy.sizes[0].lowest_price
               : shoesToSell.sizes[0].lowest_price)
           }
           size={isBuy ? shoesToBuy?.sizes[0].size : shoesToSell?.sizes[0].size}
           type={type}
+          id={productID}
         />
       </OrderWrap>
     </Container>
