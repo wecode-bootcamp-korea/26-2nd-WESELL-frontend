@@ -1,19 +1,8 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-export default function ShoesInfo() {
-  const [shoeInfo, setShoeInfo] = useState({});
-
-  useEffect(() => {
-    fetch('/data/OrderMockData.json')
-      .then(res => res.json())
-      .then(data => {
-        setShoeInfo(data.result);
-      });
-  }, []);
-
-  const [shoeImage] = shoeInfo.product_image || [];
+export default function ShoesInfo({ data }) {
+  const [shoeImage] = data.product_image || [];
 
   return (
     <Container>
@@ -22,9 +11,9 @@ export default function ShoesInfo() {
         alt="Shoes Image"
       />
       <DetailInfo>
-        <ModelNumber>{shoeInfo.product_info?.model_number}</ModelNumber>
-        <EngName>{shoeInfo.product_info?.en_name}</EngName>
-        <KorName>{shoeInfo.product_info?.ko_name}</KorName>
+        <ModelNumber>{data.product_info?.model_number}</ModelNumber>
+        <EngName>{data.product_info?.en_name}</EngName>
+        <KorName>{data.product_info?.ko_name}</KorName>
       </DetailInfo>
     </Container>
   );

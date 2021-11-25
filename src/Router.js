@@ -21,10 +21,16 @@ function Router() {
         <Route path="/detail/:productID" element={<ProductDetail />} />
         <Route path="/products" element={<Shop />} />
         <Route path="/style" element={<StyleTrend />} />
-        <Route path="/buy" element={<Order type="buy" />} />
-        <Route path="/sell" element={<Order type="sell" />} />
-        <Route path="/buy/detail" element={<OrderDetail type="buy" />} />
-        <Route path="/sell/detail" element={<OrderDetail type="sell" />} />
+        <Route path="/buy/:productID" element={<Order type="buy" />} />
+        <Route path="/sell/:productID" element={<Order type="sell" />} />
+        <Route
+          path="/buy/details/:productID"
+          element={<OrderDetail type="buy" />}
+        />
+        <Route
+          path="/sell/details/:productID"
+          element={<OrderDetail type="sell" />}
+        />
         <Route path="/users/signin" element={<Redirect />} />
       </Routes>
       <Footer />

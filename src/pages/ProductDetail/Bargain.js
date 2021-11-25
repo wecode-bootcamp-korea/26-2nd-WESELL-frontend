@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaRegArrowAltCircleDown } from 'react-icons/fa';
 import { Modal } from './components/Modal';
@@ -34,11 +33,11 @@ export default function Bargain({ productID }) {
   };
 
   const linkToOrder = () => {
-    navigate('/buy', { state: productID });
+    navigate(`/buy/${productID}`);
   };
 
   const linkToSell = () => {
-    navigate('/sell', { state: productID });
+    navigate(`/sell/${productID}`);
   };
   return (
     <BargainWrapper>
@@ -108,7 +107,9 @@ export default function Bargain({ productID }) {
 
             <Button primary>
               <ButtonDivision>
-                <ButtonTitle onClick={linkToSell}>판매</ButtonTitle>
+                <ButtonTitle primary onClick={linkToSell}>
+                  판매
+                </ButtonTitle>
                 <OrderContentWrapper>
                   <SellPrice>11,500원</SellPrice>
                   <SellStatusName>즉시 판매가</SellStatusName>
@@ -258,9 +259,13 @@ const Button = styled.button`
   font-size: 17px;
 `;
 
-const ButtonTitle = styled(Link)`
+const ButtonTitle = styled.button`
   display: flex;
   padding: 10px 10px 10px 10px;
+  background: ${props => (props.primary ? '#41B979' : '#EF6253')};
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
   border-right: 2px solid #2222221a;
   font-weight: 600;
   color: #fff;

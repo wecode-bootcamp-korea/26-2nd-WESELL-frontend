@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import OrderHow from './OrderHow';
 import ShoesInfo from './ShoesInfo';
 import orderType from './orderType';
+import { useParams } from 'react-router';
+import { API } from '../../config';
 
 const { buy, buyNow, sellNow, buyBid, sellBid } = orderType;
 
@@ -12,13 +14,19 @@ export default function OrderDetail({ type }) {
   const [title, setTitle] = useState(isBuy ? buyNow : sellNow);
   const [shoeInfo, setShoeInfo] = useState([]);
 
+  // useEffect(() => {
+  //   fetch('/data/OrderMockData.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setShoeInfo(data.result.lowest_price_by_size);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('/data/OrderMockData.json')
+    fetch(`${API.baseUrl}/products/${productID}`)
       .then(res => res.json())
-      .then(data => {
-        setShoeInfo(data.result.lowest_price_by_size);
-      });
-  }, []);
+      .then(data => setShoeInfo(data.result.lowest_price_by_size));
+  }, [productID]);
 
   const changeToOrderNow = () => {
     setTitle(isBuy ? buyNow : sellNow);
