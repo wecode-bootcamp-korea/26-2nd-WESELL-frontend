@@ -1,7 +1,6 @@
 import { React, useState } from 'react';
 import { VscChromeClose } from 'react-icons/vsc';
 import { BiUserCircle } from 'react-icons/bi';
-import { RiImageLine } from 'react-icons/ri';
 import styled from 'styled-components';
 
 const CommentModal = ({ ModalClose, modalData }) => {
@@ -31,7 +30,7 @@ const CommentModal = ({ ModalClose, modalData }) => {
     fetch(`http://10.58.3.89:8000/reviews/1/comment`, {
       method: 'POST',
       headers: {
-        Authorization: localStorage.getItem('토큰발급확인'), // 체크
+        Authorization: localStorage.getItem('TOKEN'), // 체크
       },
       body: formData,
     })
@@ -78,14 +77,6 @@ const CommentModal = ({ ModalClose, modalData }) => {
           </UserInfo>
         </ProfileBox>
 
-        <UploadWrapper>
-          <CustomImg>
-            <ImgWrapper>
-              <EmptyImg src="" alt="" />
-            </ImgWrapper>
-          </CustomImg>
-        </UploadWrapper>
-
         <CommentBox>
           <BiUserCircle fontSize="40px" color="lightgray" />
           <CommentInput
@@ -103,8 +94,6 @@ const CommentModal = ({ ModalClose, modalData }) => {
           />
 
           <PostButton onClick={addComment}>게시</PostButton>
-
-          <RiImageLine />
         </CommentBox>
 
         <GuestComment>
@@ -114,7 +103,6 @@ const CommentModal = ({ ModalClose, modalData }) => {
               src={URL.createObjectURL(imgFiles)}
               onChange={UploadFile}
               alt="업로드 사진"
-              style={{ width: '80px' }}
             />
           )}
           {commentList.map((comment, index) => {
@@ -187,11 +175,6 @@ const ProfileBox = styled.div`
   margin-bottom: 15px;
 `;
 
-const UploadWrapper = styled.div``;
-const CustomImg = styled.div``;
-const ImgWrapper = styled.div``;
-const EmptyImg = styled.img``;
-
 const ProfilePic = styled.img`
   margin-right: 10px;
   width: 30px;
@@ -216,11 +199,6 @@ const UserId = styled.p`
   font-size: 15px;
   font-weight: 700;
 `;
-
-// const UserComment = styled.p`
-//   font-size: 14px;
-//   margin-bottom: 10px;
-// `;
 
 const SocialTimeLike = styled.div`
   display: flex;
@@ -270,13 +248,14 @@ const ImageInput = styled.input`
   margin-left: 5px;
   position: absolute;
   right: 20px;
-  z-index: 10;
 `;
 
 const PostButton = styled.button``;
 
 const GuestComment = styled.ul``;
 
-const ImgFiles = styled.img``;
+const ImgFiles = styled.img`
+  width: 80px;
+`;
 
 export default CommentModal;

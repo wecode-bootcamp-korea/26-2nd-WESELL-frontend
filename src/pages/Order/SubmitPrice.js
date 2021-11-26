@@ -4,7 +4,7 @@ import orderType from './orderType';
 import { API } from '../../config';
 
 const { buyNow, sellNow, buyBid, sellBid } = orderType;
-const token = localStorage.토큰발급확인;
+const token = localStorage.TOKEN;
 
 export default function SubmitPrice({
   title,
