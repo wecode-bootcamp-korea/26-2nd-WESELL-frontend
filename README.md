@@ -59,8 +59,24 @@ WESELL | 위셀
 - 구현기능 :
 
 > **강지원**
-- 개인역할 :
-- 구현기능 :
+- 개인역할 : Login Page, Style Page 제작
+- 구현기능 : 
+- 
+[Login page]
+- Kakao API를 이용한 로그인 기능 구현
+Kakao login btn을 클릭 시, fetch를 사용, 카카오 API에 접근해 카카오 서버로부터 token을 발급받아온다.
+카카오로부터 발급받은 token을 다시 기존에 통신 중인 서버에 전달해주고
+카카오 token이 아닌 서버로부터 발급받은 token을 받아온다.
+
+[style page]
+- 서버 데이터를 이용한 style page 구성
+서버로부터 받아온 image, product_name 등의 데이터로 page UI를 구성.
+
+- 구현한 comment와 image를 서버로 전달
+style page의 onClick 이벤트로 실행되는 comment modal에서 작성된 comment와
+input='file'로 불러온 img file을 formData메서드를 사용한 변수 formData 안에 할당 후, fetch의 body에 변수 formData를 넣어 서버로 전송.
+매번 작성하는 댓글과 사진이 서버에 전달되는 것을 확인.
+
 
 > **안재우**
 - 개인역할 :
@@ -106,6 +122,9 @@ WESELL | 위셀
 > **허규빈** :
 
 > **강지원** :
+
+1. 정확히 동작하는 기능 하나를 구현하는 것을 목표로 삼았습니다.
+2. 혼자 일하려는 습관을 변화시킬 수 있는 좋은 기회였습니다.
 
 > **안재우** :
 
