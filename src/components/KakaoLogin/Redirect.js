@@ -36,7 +36,7 @@ const Redirect = () => {
           })
             .then(res => res.json())
             .then(data => {
-              localStorage.setItem('토큰발급확인', data.access_token);
+              localStorage.setItem('TOKEN', data.access_token);
 
               navigate('/main');
             });
